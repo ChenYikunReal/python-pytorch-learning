@@ -1,5 +1,7 @@
 # PyTorch框架学习记录
 
+![在这里插入图片描述](image/deep_learning.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+
 ## 安装
 安装时间：2020-06-25 ~ 2020-06-29 <br/>
 环境：
