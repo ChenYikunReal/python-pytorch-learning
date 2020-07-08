@@ -56,7 +56,14 @@ pkgs_dirs:
 我甚至一度怀疑NVIDIA驱动问题，因为我的控制面板里的NVIDIA控制面板是白色的，点击说是“找不到应用程序”，但前面我确实能打开这个东西，只是控制面板找不到，查了很多资料，做了很多尝试，还是不能解决这个空白的问题，后来觉得可能也不是这里的问题。<br/>
 ![在这里插入图片描述](image/NVIDIA控制面板.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
 <br/>最后我在[Whl下载页](https://download.pytorch.org/whl/torch_stable.html)这里下载了对应的版本的whl（cu102/torch-1.5.1-cp37-cp37m-win_amd64.whl，页面最底部）：<br/>
-![在这里插入图片描述](image/whl页面.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](image/whl页面1.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
 <br/>这个文件我下过好几次，之前下载好了但都安装失败了，最后干脆下不下来，找了朋友帮忙弄下来的，大概快900MB，本地找个地方存一下，cd命令找到目录，然后<code>pip install cu102/torch-1.5.1-cp37-cp37m-win_amd64.whl</code>，就成功了！！！<br/>
-也蛮意外的，经过了五天的努力，我装上了一个PyTorch，泪奔~~~毕竟朋友都很顺利的呢……
+后来发现torchvision库并没有下载下来，使用pip或conda依旧不能成功，还是上面说的下载页底部：<br/>
+![在这里插入图片描述](image/whl页面2.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+<br/>使用命令<code>pip install torchvision-0.6.1-cp37-cp37m-win_amd64.whl</code>完成下载：<br/>
+![在这里插入图片描述](image/成功下载torchvision.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+<br/>也蛮意外的，经过了五天的努力，我装上了一个PyTorch，泪奔~~~毕竟朋友都很顺利的呢……<br/>
 好啦，就总结到这里啦，还望对看到的人有所帮助！Lucky!
+
+# 入门
+https://pytorch-cn.readthedocs.io/zh/latest/
