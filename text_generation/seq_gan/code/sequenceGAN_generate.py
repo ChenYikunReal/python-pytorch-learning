@@ -4,8 +4,8 @@ Created on Thu Dec 20 11:14:08 2018
 """
 import sys
 import torch
-from text_generation.seq_gan.python.config import PATH, openLog
-from text_generation.seq_gan.python.data_processing import decode
+from text_generation.seq_gan.code.config import PATH, openLog
+from text_generation.seq_gan.code.data_processing import decode
 
 
 def main(batch_size=1):

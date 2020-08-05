@@ -14,9 +14,9 @@ from datetime import datetime
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from text_generation.seq_gan.python.config import (SEQ_LENGTH,DEVICE,GEN_NUM_EPOCH,MAXINT,openLog)
-from text_generation.seq_gan.python.data_processing import read_sampleFile
-from text_generation.seq_gan.python.lstmCore import pretrain_LSTMCore
+from text_generation.seq_gan.code.config import (SEQ_LENGTH, DEVICE, GEN_NUM_EPOCH, MAXINT, openLog)
+from text_generation.seq_gan.code.data_processing import read_sampleFile
+from text_generation.seq_gan.code.lstmCore import pretrain_LSTMCore
 
 
 class Generator(nn.Module):

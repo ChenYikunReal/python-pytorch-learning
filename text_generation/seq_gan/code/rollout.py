@@ -13,10 +13,10 @@ Many thanks to the original authors.
 from datetime import datetime
 import torch
 import torch.nn as nn
-from text_generation.seq_gan.python.config import (SEQ_LENGTH,EMB_SIZE, GEN_HIDDEN_DIM, ROLLOUT_ITER, DEVICE, openLog)
-from text_generation.seq_gan.python.lstmCore import LSTMCore, read_sampleFile
-from text_generation.seq_gan.python.discriminator import train_discriminator
-from text_generation.seq_gan.python.generator import sanityCheck_generator
+from text_generation.seq_gan.code.config import (SEQ_LENGTH, EMB_SIZE, GEN_HIDDEN_DIM, ROLLOUT_ITER, DEVICE, openLog)
+from text_generation.seq_gan.code.lstmCore import LSTMCore, read_sampleFile
+from text_generation.seq_gan.code.discriminator import train_discriminator
+from text_generation.seq_gan.code.generator import sanityCheck_generator
 import copy
 
 

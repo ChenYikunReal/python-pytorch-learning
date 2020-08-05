@@ -5,7 +5,7 @@ Created on Mon Dec 17 10:21:03 2018
 from itertools import chain
 import jieba
 import pandas as pd
-from text_generation.seq_gan.python.config import PATH, SEQ_LENGTH
+from text_generation.seq_gan.code.config import PATH, SEQ_LENGTH
 
 
 def wordseg(x, pad_token='PAD'):

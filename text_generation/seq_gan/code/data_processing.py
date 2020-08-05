@@ -14,7 +14,7 @@ import pandas as pd
 from itertools import chain
 from collections import Counter
 import torch
-from text_generation.seq_gan.python.config import SEQ_LENGTH,GENERATE_NUM,DEVICE,PATH
+from text_generation.seq_gan.code.config import SEQ_LENGTH,GENERATE_NUM,DEVICE,PATH
 
 
 def gen_record(num=GENERATE_NUM, vocab_size=10):

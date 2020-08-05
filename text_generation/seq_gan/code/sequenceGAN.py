@@ -13,12 +13,12 @@ Many thanks to the original authors.
 import sys
 from datetime import datetime
 import torch
-from text_generation.seq_gan.python.config import TOTAL_BATCH, DIS_NUM_EPOCH, DEVICE, PATH, NrGPU, openLog
-from text_generation.seq_gan.python.data_processing import gen_label,decode
-from text_generation.seq_gan.python.lstmCore import read_sampleFile, pretrain_LSTMCore
-from text_generation.seq_gan.python.discriminator import train_discriminator
-from text_generation.seq_gan.python.generator import Generator, train_generator
-from text_generation.seq_gan.python.rollout import Rollout, getReward
+from text_generation.seq_gan.code.config import TOTAL_BATCH, DIS_NUM_EPOCH, DEVICE, PATH, NrGPU, openLog
+from text_generation.seq_gan.code.data_processing import gen_label
+from text_generation.seq_gan.code.lstmCore import read_sampleFile, pretrain_LSTMCore
+from text_generation.seq_gan.code.discriminator import train_discriminator
+from text_generation.seq_gan.code.generator import Generator, train_generator
+from text_generation.seq_gan.code.rollout import Rollout, getReward
 
 
 def pretrain_generator(x,start_token,end_token,ignored_tokens=None,

@@ -22,7 +22,7 @@
 有说法是换成[清华镜像](https://mirrors.tuna.tsinghua.edu.cn/)，给大家分享一下我的配置（user目录下的.condarc文件，找不到的话试试是不是隐藏文件，如果没有可以考虑新建一个吧，新建的时候注意命名是<code>.condarc.</code>，否则Windows系统不允许那种命名格式）。<br/>
 我的配置参考了官网的[demo](https://mirror.tuna.tsinghua.edu.cn/help/anaconda/)，鉴于下载的时候路径报错：<code>http://mirrors.tuna.tsinghua.edu.cn/anaconda/http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/win-64</code>，尽管我不知道为什么，但我调整了一下，还说的过去，起码不是路径直接不可访问。<br/>
 有一说是不能写https而必须写http，反正两个我都试了，都不行，大家看自己的情况来吧。<br/>
-```
+```text
 channels:
   - defaults
 show_channel_urls: true
@@ -68,5 +68,21 @@ pkgs_dirs:
 # 入门
 https://pytorch-cn.readthedocs.io/zh/latest/
 
+## 机器学习
+- [深度学习原理](https://www.cntofu.com/book/85/index.html)
+
 ## 文本生成
 - [文本生成论文集](https://www.cnblogs.com/zjgtan/p/6708468.html)
+- [论文检索AMiner](https://www.aminer.cn/)
+- [我爱自然语言处理](https://www.52nlp.cn)
+- [检索源码Github](https://github.com/)
+- [哟林小平-知乎](https://www.zhihu.com/people/lin-zhen-kun-4/posts)
+### 2020-07-31
+- [7篇NIPS2019文本生成论文推荐](https://zhuanlan.zhihu.com/p/98385473)
+    - Kernelized Bayesian Softmax for Text Generation(用于文本生成的核化贝叶斯Softmax)
+- [6篇文本生成论文推荐](https://www.jiqizhixin.com/articles/2019-02-21-21)
+- [数据到文本生成的近期优质论文解读-微软亚洲](https://zhuanlan.zhihu.com/p/57709494)
+
+## {文件夹: 论文} [文本生成]
+- <code>ker_bs</code>：<code>Kernelized Bayesian Softmax for Text Generation</code>
+- <code>seq_gan</code>：<code>SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient</code>

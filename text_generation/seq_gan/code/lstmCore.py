@@ -15,9 +15,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.distributions import Normal
-from text_generation.seq_gan.python.config import (SEQ_LENGTH,EMB_SIZE,DEVICE,
-                    GEN_HIDDEN_DIM,GEN_NUM_EPOCH_PRETRAIN,openLog)
-from text_generation.seq_gan.python.data_processing import gen_record,read_sampleFile,decode
+from text_generation.seq_gan.code.config import (SEQ_LENGTH, EMB_SIZE, DEVICE,
+                                                 GEN_HIDDEN_DIM, GEN_NUM_EPOCH_PRETRAIN, openLog)
+from text_generation.seq_gan.code.data_processing import gen_record,read_sampleFile,decode
 
 
 def init_matrix(shape, stdDev=0.1):

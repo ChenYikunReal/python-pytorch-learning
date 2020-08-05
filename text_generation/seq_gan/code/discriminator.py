@@ -14,9 +14,9 @@ from datetime import datetime
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from text_generation.seq_gan.python.config import (SEQ_LENGTH,EMB_SIZE,FILTER_SIZE,NUM_FILTER,
-                    DIS_NUM_EPOCH_PRETRAIN,DEVICE,openLog)
-from text_generation.seq_gan.python.data_processing import gen_record,gen_label
+from text_generation.seq_gan.code.config import (SEQ_LENGTH, EMB_SIZE, FILTER_SIZE, NUM_FILTER,
+                                                 DIS_NUM_EPOCH_PRETRAIN, DEVICE, openLog)
+from text_generation.seq_gan.code.data_processing import gen_record,gen_label
 
 
 class Highway(nn.Module):
