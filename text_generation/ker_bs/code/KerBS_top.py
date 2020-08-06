@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#Use kerbs_top to replace Softmax function
+# Use kerbs_top to replace Softmax function
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -33,6 +33,7 @@ def advanced_softmax(logits, mask=None):
     x_sm = scores_exp / scores_sum
     return x_sm
 
+
 def theta_logit(h, W, theta):
     """ Variable kernel. Used to replace inner product.
 
@@ -54,10 +55,11 @@ def theta_logit(h, W, theta):
     inner_product=tf.tensordot(h, W, axes=[[-1],[0]])
     cos=inner_product/h_norm/W_norm
     PN=tf.cast(cos>1e-7, main_dtype)
-    cos_abs=tf.abs(cos)+1e-7 #change from 1e-9->1e-7 because of fp16, 1e-7work, but 1e-9 not work
+    cos_abs=tf.abs(cos)+1e-7 # change from 1e-9->1e-7 because of fp16, 1e-7work, but 1e-9 not work
     ratio_pos=(a*tf.exp(theta*cos_abs)-a)/cos_abs
     return (2*PN*ratio_pos+(1-PN)*(ratio_pos*0+1))*inner_product
-  
+
+
 def kerbs_top(top_features, bayes_component, top_dimension, dtype):
     """ KerBS top layer. Used to directly replace Softmax.
 
@@ -73,21 +75,21 @@ def kerbs_top(top_features, bayes_component, top_dimension, dtype):
     feature_shape=top_features.shape
     ndims=len(feature_shape)
     
-    #Build sense embedding and theta
+    # Build sense embedding and theta
     W=tf.get_variable(name='kerbs/W', shape=[feature_shape[-1] , top_dimension*bayes_component], dtype=dtype)
     theta=tf.get_variable(name='kerbs/theta', initializer=tf.zeros([top_dimension*bayes_component], dtype=dtype))
     
-    #Get sense logits
+    # Get sense logits
     sense_logits=theta_logit(top_features, W, theta)
     if dtype==tf.float16:
         sense_logits=tf.saturate_cast(sense_logits, tf.float32)
     
-    #Get sense probs
+    # Get sense probs
     probs=advanced_softmax(sense_logits)
     advanced_add_to_collections('kerbs_collection', probs, 'sense_probs')
     probs=tf.reshape(probs, [-1, top_dimension*bayes_component])
     
-    #Build a sparse matrix to control sense allocation
+    # Build a sparse matrix to control sense allocation
     sense_initial_allocate=[]
     for i in range(bayes_component):
         sense_initial_allocate.extend(list(range(top_dimension)))
@@ -114,15 +116,15 @@ def kerbs_top(top_features, bayes_component, top_dimension, dtype):
         advanced_add_to_collections('kerbs_collection', probs, 'word_probs')
         pass
     
-    #Build sense usage
+    # Build sense usage
     usage=tf.get_variable(name='kerbs/usage', initializer=tf.zeros([top_dimension*bayes_component], dtype=tf.float32), trainable=False)
     advanced_add_to_collections('kerbs_collection', usage, 'usage')
     
-    #Build word log_P
+    # Build word log_P
     efficiency=tf.get_variable(name='kerbs/efficiency', initializer=tf.zeros([top_dimension], dtype=tf.float32), trainable=False)
     advanced_add_to_collections('kerbs_collection', efficiency, 'efficiency')
     
-    #Build word count
+    # Build word count
     word_count=tf.get_variable(name='kerbs/word_count', initializer=tf.zeros([top_dimension], dtype=tf.int32), trainable=False, dtype=tf.int32)
     advanced_add_to_collections('kerbs_collection', word_count, 'word_count')
     return logits

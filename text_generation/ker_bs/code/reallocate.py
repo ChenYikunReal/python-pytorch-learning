@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-#Custom reallocation strategy
+# Custom reallocation strategy
 import tensorflow as tf
 import numpy as np
 
+
 def get_new_sense_allocate(allreduce_args):
-    #hyper-parameters
+    # hyper-parameters
     max_component_pre_word=4
     min_component_per_word=1
     reallocate_ratio=0.005
@@ -21,14 +22,14 @@ def get_new_sense_allocate(allreduce_args):
     for item in current_allocate:
         component_per_word[item]+=1
     
-    #Find useless component:
+    # Find useless component:
     component_argsort=np.argsort(usage)
-    #Find words that needs new component most
+    # Find words that needs new component most
     eff_modified=np.zeros([vocab_size])
     for i in range(vocab_size):
         eff_modified[i]=eff[i]/(word_num[i]**0.5+1e-7)
     word_argsort=np.argsort(eff_modified)
-    #Reallocate
+    # Reallocate
     component_argsort_id=0
     change_count=0
     flags=0
@@ -54,6 +55,7 @@ def get_new_sense_allocate(allreduce_args):
             break
     tf.logging.info('Reallocate number of this step:{}'.format(change_count))
     return current_allocate
+
 
 if __name__=='__main__':
     import pickle as pkl

@@ -2,7 +2,7 @@
 
 ![在这里插入图片描述](https://github.com/ChenYikunReal/pytorch_learning/blob/master/images/deep_learning.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
 
-## 安装
+## 安装Pytorch
 安装时间：2020-06-25 ~ 2020-06-29 <br/>
 环境：
 - Python3.7（可以使用Anaconda自带的Python3.7）
@@ -64,6 +64,10 @@ pkgs_dirs:
 ![在这里插入图片描述](https://github.com/ChenYikunReal/pytorch_learning/blob/master/images/成功下载torchvision.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
 <br/>也蛮意外的，经过了五天的努力，我装上了一个PyTorch，泪奔~~~毕竟朋友都很顺利的呢……<br/>
 好啦，就总结到这里啦，还望对看到的人有所帮助！Lucky!
+
+## 安装TensorFlow
+很多现成的code都是基于TensorFlow写的，下载TensorFlow的命令：<code>pip install tensorflow -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com</code><br/>
+我下载的时候本地配的清华镜像不好使，生活不易啊！
 
 # 入门
 https://pytorch-cn.readthedocs.io/zh/latest/
