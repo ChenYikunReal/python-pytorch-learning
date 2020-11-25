@@ -1,6 +1,6 @@
 # PyTorch框架学习记录
 
-![在这里插入图片描述](https://github.com/ChenYikunReal/pytorch_learning/blob/master/images/deep_learning.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+![](images/deep_learning.jpg)
 
 ## 安装Pytorch
 安装时间：2020-06-25 ~ 2020-06-29 <br/>
@@ -12,11 +12,11 @@
 
 官网：[官网链接](https://pytorch.org/)<br/>
 下图是我的显卡配置：<br/>
-![在这里插入图片描述](https://github.com/ChenYikunReal/pytorch_learning/blob/master/images/显卡.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+![](images/显卡.PNG)
 <br/>根据CUDA版本的对应，以及考虑到现在已经不区分python版本，所以官网给出的conda下载命令如下：<br/>
-![在这里插入图片描述](https://github.com/ChenYikunReal/pytorch_learning/blob/master/images/官网conda版本.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+![](images/官网conda版本.PNG)
 <br/>同理，官网给出的pip下载命令如下：<br/>
-![在这里插入图片描述](https://github.com/ChenYikunReal/pytorch_learning/blob/master/images/官网pip版本.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+![](images/官网pip版本.PNG)
 <br/>先说conda吧<br/>
 使用<code>conda install pytorch torchvision cudatoolkit=10.2 -c pytorch</code>的话，是从外网上下载的，有墙所以一般会HTTP报错导致下载失败。<br/>
 有说法是换成[清华镜像](https://mirrors.tuna.tsinghua.edu.cn/)，给大家分享一下我的配置（user目录下的.condarc文件，找不到的话试试是不是隐藏文件，如果没有可以考虑新建一个吧，新建的时候注意命名是<code>.condarc.</code>，否则Windows系统不允许那种命名格式）。<br/>
@@ -54,20 +54,25 @@ pkgs_dirs:
 网上还有说可以用<code>pip install torch -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com</code>来下载的说法，我试了试，能下载一部分，但还是不能成功。<br/>
 有趣的是过程中我发现好像我的Anaconda和Python都是32bit的，然而好像Pytorch要求的是64bit……所以我不得不卸载Anaconda，重新安装64bit，重新配置环境，重新把所有的坑走一遍，然后还是失败……<br/>
 我甚至一度怀疑NVIDIA驱动问题，因为我的控制面板里的NVIDIA控制面板是白色的，点击说是“找不到应用程序”，但前面我确实能打开这个东西，只是控制面板找不到，查了很多资料，做了很多尝试，还是不能解决这个空白的问题，后来觉得可能也不是这里的问题。<br/>
-![在这里插入图片描述](https://github.com/ChenYikunReal/pytorch_learning/blob/master/images/NVIDIA控制面板.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+![](images/NVIDIA控制面板.PNG)
 <br/>最后我在[Whl下载页](https://download.pytorch.org/whl/torch_stable.html)这里下载了对应的版本的whl（cu102/torch-1.5.1-cp37-cp37m-win_amd64.whl，页面最底部）：<br/>
-![在这里插入图片描述](https://github.com/ChenYikunReal/pytorch_learning/blob/master/images/whl页面1.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+![](images/whl页面1.PNG)
 <br/>这个文件我下过好几次，之前下载好了但都安装失败了，最后干脆下不下来，找了朋友帮忙弄下来的，大概快900MB，本地找个地方存一下，cd命令找到目录，然后<code>pip install cu102/torch-1.5.1-cp37-cp37m-win_amd64.whl</code>，就成功了！！！<br/>
 后来发现torchvision库并没有下载下来，使用pip或conda依旧不能成功，还是上面说的下载页底部：<br/>
-![在这里插入图片描述](https://github.com/ChenYikunReal/pytorch_learning/blob/master/images/whl页面2.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+![](images/whl页面2.PNG)
 <br/>使用命令<code>pip install torchvision-0.6.1-cp37-cp37m-win_amd64.whl</code>完成下载：<br/>
-![在这里插入图片描述](https://github.com/ChenYikunReal/pytorch_learning/blob/master/images/成功下载torchvision.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg5NjMxOA==,size_16,color_FFFFFF,t_70)
+![](images/成功下载torchvision.PNG)
 <br/>也蛮意外的，经过了五天的努力，我装上了一个PyTorch，泪奔~~~毕竟朋友都很顺利的呢……<br/>
 好啦，就总结到这里啦，还望对看到的人有所帮助！Lucky!
 
 ## 安装TensorFlow
 很多现成的code都是基于TensorFlow写的，下载TensorFlow的命令：<code>pip install tensorflow -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com</code><br/>
 我下载的时候本地配的清华镜像不好使，生活不易啊！
+
+## TensorFlow版本兼容
+TensorFlow的1.x版本和2.x版本是不兼容的，这里是[处理方法](https://cloud.tencent.com/developer/article/1473538)。<br/>
+[TensorFlow升级脚本下载地址](https://tensorflow.google.cn/guide/upgrade)
+
 
 # 入门
 https://pytorch-cn.readthedocs.io/zh/latest/
@@ -86,6 +91,8 @@ https://pytorch-cn.readthedocs.io/zh/latest/
     - Kernelized Bayesian Softmax for Text Generation(用于文本生成的核化贝叶斯Softmax)
 - [6篇文本生成论文推荐](https://www.jiqizhixin.com/articles/2019-02-21-21)
 - [数据到文本生成的近期优质论文解读-微软亚洲](https://zhuanlan.zhihu.com/p/57709494)
+### 2020-08-06
+- [RNN和LSTM](https://www.cnblogs.com/zhangchaoyang/articles/6684906.html)
 
 ## {文件夹: 论文} [文本生成]
 - <code>ker_bs</code>：<code>Kernelized Bayesian Softmax for Text Generation</code>
