@@ -73,27 +73,7 @@ pkgs_dirs:
 TensorFlow的1.x版本和2.x版本是不兼容的，这里是[处理方法](https://cloud.tencent.com/developer/article/1473538)。<br/>
 [TensorFlow升级脚本下载地址](https://tensorflow.google.cn/guide/upgrade)
 
-
-# 入门
-https://pytorch-cn.readthedocs.io/zh/latest/
-
-## 机器学习
-- [深度学习原理](https://www.cntofu.com/book/85/index.html)
-
-## 文本生成
-- [文本生成论文集](https://www.cnblogs.com/zjgtan/p/6708468.html)
-- [论文检索AMiner](https://www.aminer.cn/)
-- [我爱自然语言处理](https://www.52nlp.cn)
-- [检索源码Github](https://github.com/)
-- [哟林小平-知乎](https://www.zhihu.com/people/lin-zhen-kun-4/posts)
-### 2020-07-31
-- [7篇NIPS2019文本生成论文推荐](https://zhuanlan.zhihu.com/p/98385473)
-    - Kernelized Bayesian Softmax for Text Generation(用于文本生成的核化贝叶斯Softmax)
-- [6篇文本生成论文推荐](https://www.jiqizhixin.com/articles/2019-02-21-21)
-- [数据到文本生成的近期优质论文解读-微软亚洲](https://zhuanlan.zhihu.com/p/57709494)
-### 2020-08-06
-- [RNN和LSTM](https://www.cnblogs.com/zhangchaoyang/articles/6684906.html)
-
-## {文件夹: 论文} [文本生成]
-- <code>ker_bs</code>：<code>Kernelized Bayesian Softmax for Text Generation</code>
-- <code>seq_gan</code>：<code>SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient</code>
+## 学习教程
+- [PyTorch官方文档](https://pytorch.org/docs/stable/torch.html)
+- [PyTorch中文文档](https://pytorch-cn.readthedocs.io/zh/latest/)
+- [Jupyter项目文档](https://jupyter.org/documentation)
